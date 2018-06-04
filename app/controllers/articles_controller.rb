@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = current_user.articles if current_user
+
+
+
   end
 
   def show
@@ -13,6 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
     @article.save
     redirect_to articles_path
   end
