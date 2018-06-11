@@ -1,5 +1,5 @@
 <div class="text-center">
-    <h1>Mon blog</h1>
+    <h1>Mes souvenirs</h1>
 </div>
 <div class="container">
   <div class="row">
@@ -11,14 +11,15 @@
             <p><b><%= article.created_at.strftime("%D") %></b></p>
         </div>
     </div>
+          <% end %>
       <% end %>
+
   </div>
 
-      <% end %>
-
 </div>
+
 <div class="text-center">
-            <%= link_to "nouvel article", new_article_path, class: "btn btn-primary" %>
+            <%= link_to "Nouvel article", new_article_path, class: "btn btn-primary" %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
 </div>
 
